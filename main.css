@@ -1,0 +1,795 @@
+/* styling the whole page and boxes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* certied styling */
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* general styling */
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  background-color: #fff;
+  color: hsl(176, 50%, 47%);
+  border: 1px solid hsl(176, 50%, 47%);
+}
+/* styling the first section */
+.first-section {
+  background-image: url("images/image-hero-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40vh;
+}
+
+/* styling the header section */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+}
+
+/* styling header contents */
+/* styling the logo */
+.logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  font-weight: 700;
+}
+
+/* styling the toggle button */
+.toggle {
+  margin-left: auto;
+  margin-right: 1rem;
+  z-index: 10;
+
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* styling the menu */
+.menu-modal {
+  width: 100%;
+  z-index: 10;
+}
+
+nav ul.menu {
+  list-style-type: none;
+}
+
+.menu {
+  background-color: #fff;
+  width: 85vw;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+}
+
+/* styling the individual items in the menu */
+.item a {
+  display: block;
+  padding: 1.2rem 1rem;
+  color: #222;
+}
+
+.item:not(.last) {
+  border-bottom: 0.5px solid hsla(0, 0%, 80%);
+}
+
+/* styling for hiding the menu and overlay */
+.hidden {
+  display: none;
+}
+
+/* styling for the overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+/* media queries for the header section */
+@media all and (min-width: 760px) {
+  .first-section {
+    background-image: url("images/image-hero-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 35vh;
+  }
+  /* styling the header section */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* remove toggle button */
+  .toggle {
+    display: none;
+  }
+  /* sets menu to display block and reduces its width to its content */
+  .menu-modal {
+    display: block;
+    width: auto;
+  }
+  .menu {
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    background-color: inherit;
+  }
+  /* sets the individual menu item to color white and remove paddings */
+  .item a {
+    padding: 0rem 0.5rem;
+    color: #fff;
+  }
+  .item a:hover {
+    color: hsl(176, 50%, 47%);
+  }
+  /* removing the border bottom from the individual items */
+  .item:not(.last) {
+    border-bottom: none;
+  }
+
+  .logo {
+    margin-left: 3rem;
+  }
+}
+
+main {
+  background-color: hsl(0, 0%, 90%);
+  padding: 1rem 1rem;
+}
+
+.sections-general {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.6rem;
+}
+/* styling for the mastercraft section */
+.mastercraft {
+  align-items: center;
+
+  margin-top: -3.2rem;
+}
+/* styling the mastercraft contents */
+/* adjusting logo position */
+#mastercraft-logo {
+  margin-top: -1.5rem;
+}
+
+.mastercraft h2 {
+  text-transform: capitalize;
+  text-align: center;
+  margin: 1rem 1rem;
+}
+
+.mastercraft p {
+  text-align: center;
+  color: hsl(0, 0%, 40%);
+}
+
+.back-project {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  align-items: center;
+  -webkit-align-items: center;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+}
+
+/* styling the back this project button and bookmark button */
+/* back this project btn */
+.backproject-btn {
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  font-size: 1rem;
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+/* bookmark btn */
+.bookmark-btn {
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  font-size: 0;
+  padding: 0rem 0rem;
+  border: none;
+  cursor: pointer;
+}
+.active-path1 {
+  fill: hsl(176, 50%, 47%);
+}
+.active-path2 {
+  fill: #fff;
+}
+svg {
+  display: block;
+}
+
+/* span for the button text */
+.bookmarkbtn-text {
+  font-size: 1rem;
+  padding: 0 1rem;
+  display: none;
+}
+
+/* media queries for the mastercraft section on ipad and ipad pro */
+@media all and (min-width: 760px) {
+  .bookmarkbtn-text {
+    display: block;
+  }
+
+  .bookmarkbtn-text-active {
+    font-weight: 600;
+    color: hsl(176, 34%, 68%);
+  }
+  .sections-general {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+/* media queries for the mastercraft section on ipad and ipad pro laptops*/
+
+@media all and (min-width: 1200px) {
+  .sections-general {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+  section.contribution.sections-general {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+}
+/* matercraft section styling ends */
+/* contributions section styling starts*/
+.contribution {
+  margin: 2rem 0;
+  padding: 1rem;
+}
+.contribution div p:not(.bold) {
+  color: rgb(148, 141, 141);
+}
+.ct-item {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgb(202, 196, 196);
+  margin: 1em 6.5rem;
+}
+/* progress bar styling */
+#myProgress {
+  width: 100%;
+  background-color: rgb(216, 215, 215);
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
+#myBar {
+  width: 80%;
+  background-color: hsl(176, 34%, 68%);
+  height: 1rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
+/* media queries for contributions section on tablet and ipad */
+@media all and (min-width: 760px) {
+  .contribution {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+  }
+
+  .range-container {
+    padding-top: 1.5rem;
+    width: 100%;
+  }
+  .ct-item {
+    margin: 0.5rem 1rem;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+
+  /* adding a right border to money and no of contributors div */
+  .moneybacked,
+  .No-of-contributors {
+    border-right: 1px solid rgb(80, 76, 76);
+    padding-right: 1.5rem;
+  }
+  /* removing the horizontal bar below the money and no of contributors divs */
+  hr {
+    display: none;
+  }
+}
+/* contributions section styling  ends*/
+
+/* about section styling starts*/
+.about {
+  padding: 1rem;
+}
+.about h2 {
+  margin: 1rem 0;
+}
+
+.about p {
+  margin: 0.5rem 0;
+  color: rgb(148, 141, 141);
+}
+/* styling the offer boxes */
+.offers {
+  border: 1px solid rgb(148, 141, 141);
+  padding: 1rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+p.pledge {
+  color: hsl(176, 50%, 47%);
+  font-weight: 600;
+}
+
+span.spots-left {
+  color: #222;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+p.balance {
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.offers button {
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  margin: 0.5rem 0;
+}
+.offers button:hover {
+  background-color: #fff;
+  color: hsl(176, 50%, 47%);
+  border: 1px solid hsl(176, 50%, 47%);
+}
+
+div.inactive {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+button.out-of-stock {
+  background-color: grey;
+}
+
+/* media queries for the about section */
+@media all and (min-width: 760px) {
+  .offers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+  }
+  p.pledge-text {
+    width: 100%;
+  }
+}
+/* about section section ends */
+/*back-this-project-modal section styling starts*/
+.back-this-project-modal {
+  padding: 1rem 1rem;
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  right: 0;
+  margin: 0 1rem;
+  z-index: 10;
+  border: 2px solid#66a3bb;
+}
+/* medaa queries for the back-this-project-modal page */
+@media all and (min-width: 760px) {
+  .back-this-project-modal {
+    margin: 0 4rem;
+  }
+}
+@media all and (min-width: 1200px) {
+  .back-this-project-modal {
+    margin: 0 20rem;
+  }
+}
+/* continuation of styling for the back-this-project-modal section */
+.back-this-project-modal p:not(.pledge) {
+  color: rgb(148, 141, 141);
+}
+
+.btp-section {
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.exit {
+  font-size: 1.5rem;
+  color: grey;
+  cursor: pointer;
+}
+/* styling individual modal boxes in the back-this-project-modal section */
+.offers-modal {
+  border: 1px solid rgb(148, 141, 141);
+  padding: 1rem 0rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+p.pledge-text-modal {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+}
+
+.offer-name {
+  width: 100%;
+  margin-top: 0.2rem;
+  padding-left: 3.25rem;
+}
+
+.offers-modal > p.balance {
+  margin-left: 1rem;
+}
+/* styling for checkbox to make it round  starts*/
+form {
+  margin-left: 1rem;
+}
+.round {
+  position: relative;
+}
+
+.round label.mark {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+.round label.mark::after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 5px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  transform: rotate(-45deg);
+  width: 10px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+  /* margin-left: 1rem; */
+}
+
+.round input[type="checkbox"]:checked + label.mark {
+  background-color: #66b1bb;
+  border-color: #66a3bb;
+}
+
+.round input[type="checkbox"]:checked + label.mark:after {
+  opacity: 1;
+}
+
+form:hover,
+label.mark:hover {
+  color: #66b1bb;
+  border-color: #66a3bb;
+}
+
+label.mark:hover {
+  border: 2px solid;
+  border-color: #66a3bb !important;
+}
+.name {
+  margin-left: 1.5rem;
+  /* margin-top: 0.3rem; */
+  cursor: pointer;
+}
+.name-active {
+  color: #66a3bb;
+}
+.round {
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+}
+/* styling for checkbox to make it round  ends */
+/* enter pledge section styling starts */
+.enter-pledge {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  border-top: 1px solid #ccc;
+  padding: 1.3rem 1rem;
+  align-items: center;
+  -webkit-align-items: center;
+}
+/* hides the enter pledge box */
+.hide {
+  display: none;
+}
+.border-color {
+  border: 2px solid #66a3bb;
+}
+
+.money-pledge {
+  display: flex;
+  margin-left: auto;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  align-items: center;
+  -webkit-align-items: center;
+  color: #ccc;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  cursor: pointer;
+  font: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.money-pledge:hover {
+  border: 2px solid #66a3bb;
+}
+.num {
+  width: 3rem;
+  border: none;
+  outline: none;
+  padding-left: 0.5rem;
+}
+.free-pledge-money {
+  width: 3rem;
+  border: none;
+  outline: none;
+  padding-left: 0.5rem;
+}
+/* to remove the spin button in the number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* stlying for the continue button in each modal */
+.continue-btn {
+  margin-left: auto;
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  padding: 0.7rem 0.7rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+/* @media queries for the back this project modal */
+@media all and (min-width: 530px) {
+  .enter-pledge button {
+    margin-left: 0.5rem;
+  }
+}
+@media all and (min-width: 760px) {
+  .offers-modal {
+    align-items: center;
+    -webkit-align-items: center;
+  }
+  .offer-name {
+    width: auto;
+    margin: 0;
+    padding-left: 1.5rem;
+    order: 2;
+  }
+  .round {
+    order: 1;
+  }
+  .offers-modal > p.balance {
+    order: 3;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  .pledge-text-modal {
+    order: 4;
+  }
+  .enter-pledge {
+    order: 5;
+  }
+}
+/* the back this project modal ends */
+
+/* styling the success section starts */
+.success-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+  align-items: center;
+  -webkit-align-items: center;
+  background-color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+}
+.success-modal {
+  position: absolute;
+  top: 13rem;
+  left: 0;
+  right: 0;
+  margin: 0 1rem;
+  z-index: 10;
+  border: 2px solid#66a3bb;
+}
+.success-modal h2 {
+  margin: 1rem 0;
+}
+
+.success-modal p {
+  color: rgb(133, 133, 133);
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.got-it {
+  padding: 0.5rem 1rem;
+  background-color: hsl(176, 50%, 47%);
+  color: #fff;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 1rem;
+}
+
+.not-active {
+  display: none;
+}
+/* media queries for the success modal section */
+@media all and (min-width: 760px) {
+  .success-modal {
+    margin: 0 4rem;
+  }
+}
+@media all and (min-width: 1000px) {
+  .success-modal {
+    margin: 0 14rem;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .success-modal {
+    margin: 0 25rem;
+  }
+}
+/* success modal section ends */
+
+/* special styling for smaller width screens */
+
+@media all and (max-width: 280px) {
+  .backproject-btn {
+    padding: 1rem 1rem;
+  }
+}
+@media all and (max-width: 320px) {
+  div.back-project {
+    flex-direction: column;
+  }
+  span.bookmarkbtn-text {
+    display: block;
+  }
+  .bookmark-btn {
+    margin: 1rem 0;
+  }
+  .bookmarkbtn-text-active {
+    font-weight: 600;
+    color: hsl(176, 34%, 68%);
+  }
+  .enter-pledge {
+    flex-direction: column;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+  .money-pledge,
+  .continue-btn {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+  .success-modal h2 {
+    text-align: center;
+  }
+}
